@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="header">
+	<title>Simple Movie List</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link th:href = "@{/css/bootstrap.min.css}" rel="stylesheet">    
+</head>
+
+<body>
+	<nav th:fragment="navbar" class="navbar navbar-dark bg-primary navbar-expand-lg">
+		<a class="navbar-brand" href="/">Movie List</a>
+		<div class="collapse navbar-collapse" >
+		    <ul class="navbar-nav mr-auto">
+		      <li class="nav-item active">
+		        <a class="nav-link" href="/persons">Persons</a>
+		      </li>
+		    </ul>
+		</div>
+	</nav>
+    <footer th:fragment="footer">
+    	<div class="container">
+    		<span class="text-muted">&copy; 2022 Fors &hearts;</span>
+    	</div>
+    </footer>
+</body>
+</html>

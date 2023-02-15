@@ -1,0 +1,43 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<header th:insert="fragments/default :: header"> </header>
+
+	<body>
+		<div th:insert="fragments/default :: navbar"></div>
+	
+		<div class="container">
+			<table class="table table-sm table-striped">
+		  		<thead class="thead-dark">
+		  			<tr>
+					    <th scope="col">Id</th>
+					    <th scope="col">Name</th>
+					    <th scope="col"></th>
+					</tr>
+		  		</thead>
+				<tbody>
+					<tr th:each="person: ${persons}">
+						<td th:text="${person.id}" />
+						<td th:text="${person.name}" />
+						<td>
+							<a class="btn btn-danger" role="button" th:href="@{/persons/{id}/delete(id=${person.id})}">Delete</a>
+						</td>
+					</tr>
+				</tbody>
+		  	</table>
+		</div>
+		
+		<div class="container">
+			<form class="form-inline" action="#" th:action="@{/persons}" method="post" th:object="${formData}">			  
+			  <div class="form-group mx-sm-3 mb-2">
+			    <label for="name" class="sr-only">Name</label>
+			    <input type="text" class="form-control" id="name" placeholder="Name" th:field="*{name}">
+			  </div>			  
+			  <button type="submit" class="btn btn-primary mb-2">Add Person</button>
+			</form>
+		</div>
+
+
+	</body>
+  
+  <div th:insert="fragments/default :: footer"></div>
+</html>

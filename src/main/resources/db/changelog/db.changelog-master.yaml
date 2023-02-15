@@ -1,0 +1,13 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: '1'
+      author: matthew
+
+  - includeAll:
+      path: DDL
+      relativeToChangelogFile: true
+
+  - includeAll:
+      path: DML
+      relativeToChangelogFile: true
