@@ -27,7 +27,7 @@ Install:
 
 1. Start the application
    ```sh
-   spring-boot:run
+   mvn spring-boot:run
    ```
    ```
 2. Navigate to http://localhost:8080/
